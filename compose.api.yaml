@@ -1,0 +1,15 @@
+services:
+  api:
+    image: pricewatch-api:dev
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+
+    env_file:
+      - .env
+
+    environment:
+      DATABASE_HOST: pricewatch-db
+
+    ports:
+      - "127.0.0.1:8000:8000"

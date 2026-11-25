@@ -1,0 +1,36 @@
+# Local credentials and environment files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python and PyCharm
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.idea/
+
+# Local databases and backups
+*.db
+*.db-*
+*.sqlite*
+*.backup
+*.dump
+
+# Trained models and generated experiment files
+*.pkl
+*.joblib
+training_reference.csv
+evaluation.json
+mlflow-data/
+mlartifacts/
+mlruns/
+temp/
+drift_report*.html
+
+# Airflow runtime files
+airflow/logs/
+airflow/config/airflow.cfg

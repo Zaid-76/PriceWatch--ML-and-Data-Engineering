@@ -1,0 +1,7 @@
+name: pricewatch
+
+include:
+  - ./airflow/docker-compose.yaml
+  - ./compose.api.yaml
+  - ./compose.mlflow.yaml
+  - ./compose.postgres.yaml
