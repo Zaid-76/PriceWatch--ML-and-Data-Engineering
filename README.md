@@ -1,4 +1,4 @@
-# PriceWatch
+# PriceWatch | Market Data Engineering & ML Forecasting Platform
 
 PriceWatch forecasts the next trading session’s percentage return for Apple (AAPL), Microsoft (MSFT), and NVIDIA (NVDA). It follows each forecast through its lifecycle: collecting prices, generating a prediction, serving it through an API, and measuring its error once the actual closing price arrives.
 
