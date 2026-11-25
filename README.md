@@ -96,7 +96,15 @@ The intended first-run sequence is:
 
 1. Copy `.env.example` to `.env`. Supply a Twelve Data API key, database password, Airflow Fernet key, and JWT secret.
 2. Start PostgreSQL and MLflow with `docker compose up -d pricewatch-db mlflow`. On an empty PostgreSQL volume, `schema.sql` initializes the project tables.
-3. Using a Python environment with the project’s ingestion and training dependencies, run historical ingestion to populate `companies` and `stock_prices`.
+3. From the project root, create a virtual environment using Python 3.13 (tested with 3.13.4). In Windows PowerShell, run:
+
+   ```powershell
+   py -3.13 -m venv .venv
+   .\.venv\Scripts\Activate.ps1
+   python -m pip install -r requirements-local.txt
+   ```
+
+   With the virtual environment active, run `python ingestion.py` to load historical prices into PostgreSQL.
 4. Run `python features.py` from the project root. The first training run creates `model.pkl` and records its training reference in MLflow.
 5. Start the full stack with `docker compose up -d --build`. Unpause the PriceWatch DAG and trigger it to generate the first saved predictions.
 
